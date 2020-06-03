@@ -2,12 +2,12 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const adminRoutes = require("./routes/admin");
+const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/admin", adminRoutes);
+app.use("/admin", adminData.routes);
 app.use(shopRoutes);
 app.use(express.static(path.join(__dirname, "public")));
 
