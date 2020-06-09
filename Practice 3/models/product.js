@@ -1,4 +1,4 @@
-const mongoConnect = require("../util/database");
+const getDb = require("../util/database").getDB;
 
 class Product {
   constructor(title, price, description, imageURL) {
